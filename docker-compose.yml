@@ -1,0 +1,19 @@
+# Sobe um PostgreSQL pronto para a aplicação:
+#   docker compose up -d
+# Para parar:   docker compose down
+# Apagar dados: docker compose down -v
+services:
+  postgres:
+    image: postgres:16
+    container_name: carbon_footprint_db
+    environment:
+      POSTGRES_DB: carbon_footprint
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 15AGO
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
