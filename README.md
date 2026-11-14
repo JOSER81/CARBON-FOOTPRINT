@@ -1,4 +1,4 @@
-# 🌱 Calculadora de Pegada de Carbono — Java OO + PostgreSQL
+Calculadora de Pegada de Carbono — Java OO + PostgreSQL
 
 Aplicação Java com arquitetura em camadas, CRUD completo e banco **PostgreSQL**.
 Projeto pronto para abrir no **IntelliJ IDEA** (Maven).
@@ -63,7 +63,7 @@ host `localhost`, porta `5432`, banco `carbon_footprint`, usuário/senha → *Te
 | `Connection refused` | PostgreSQL não está rodando (suba o Docker ou o serviço) |
 | `database "carbon_footprint" does not exist` | Falta executar `CREATE DATABASE carbon_footprint;` |
 | `password authentication failed` | Usuário/senha diferentes do `db.properties` |
-| `Driver PostgreSQL não encontrado` | Recarregue o Maven (ícone 🔄 na aba Maven) |
+| `Driver PostgreSQL não encontrado` | Recarregue o Maven (ícone  na aba Maven) |
 
 ## Estrutura
 
