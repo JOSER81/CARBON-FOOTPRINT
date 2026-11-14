@@ -56,28 +56,7 @@ Se preferir criar na mão, use `sql/schema.sql`.
 `View → Tool Windows → Database` → **+** → **Data Source → PostgreSQL** →
 host `localhost`, porta `5432`, banco `carbon_footprint`, usuário/senha → *Test Connection*.
 
-## Problemas comuns
 
-| Erro | Causa provável |
-|---|---|
-| `Connection refused` | PostgreSQL não está rodando (suba o Docker ou o serviço) |
-| `database "carbon_footprint" does not exist` | Falta executar `CREATE DATABASE carbon_footprint;` |
-| `password authentication failed` | Usuário/senha diferentes do `db.properties` |
-| `Driver PostgreSQL não encontrado` | Recarregue o Maven (ícone  na aba Maven) |
-
-## Estrutura
-
-```
-carbon-footprint-postgres/
-├── pom.xml
-├── docker-compose.yml
-├── sql/schema.sql
-├── .idea/                      (configuração do IntelliJ + run config "Main")
-└── src/main/
-    ├── resources/db.properties
-    └── java/com/carbonfootprint/
-        ├── Main.java
-        ├── model/      (EmissaoFator + 5 subclasses, Usuario, CalculoResult)
         ├── database/   (DatabaseConnection, DatabaseInitializer)
         ├── dao/        (GenericDAO, UsuarioDAO, CalculoDAO)
         ├── service/    (UsuarioService, CalculoService)
