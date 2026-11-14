@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pegada de Carbono</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="rail">
+    <h1>Pegada de carbono</h1>
+    <p class="sub">Cuide do solo, das florestas e de quem vive nelas: comece medindo o que você emite.</p>
+    <nav>
+      <button class="nav on" data-tab="usuarios">Usuários</button>
+      <button class="nav" data-tab="calcular">Calcular</button>
+      <button class="nav" data-tab="historico">Histórico</button>
+    </nav>
+  </aside>
+
+  <main>
+    <section id="usuarios" class="tab on">
+      <h2>Usuários</h2>
+      <form id="formUsuario" class="grid">
+        <input type="hidden" id="uId">
+        <label>Nome<input id="uNome" required></label>
+        <label>E-mail<input id="uEmail" type="email" required></label>
+        <label>Cidade<input id="uCidade" required></label>
+        <div class="acoes">
+          <button class="btn" id="uSalvar">Cadastrar usuário</button>
+          <button type="button" class="btn ghost" id="uCancelar" hidden>Cancelar edição</button>
+        </div>
+      </form>
+      <div class="tabela"><table>
+        <thead><tr><th>Nome</th><th>E-mail</th><th>Cidade</th><th></th></tr></thead>
+        <tbody id="listaUsuarios"></tbody>
+      </table></div>
+    </section>
+
+    <section id="calcular" class="tab">
+      <h2>Calcular minha pegada</h2>
+      <form id="formCalculo" class="grid">
+        <label>Usuário<select id="cUsuario" required></select></label>
+        <label>Km por semana<input id="cKm" type="number" min="0" step="any" value="0" required></label>
+        <label>Transporte<select id="cTransporte"><option>Carro</option><option>Moto</option><option>Ônibus / Metrô</option><option>Bicicleta / Pé</option></select></label>
+        <label>Energia em casa<select id="cEnergia"><option>Baixo</option><option>Médio</option><option>Alto</option></select></label>
+        <label>Alimentação<select id="cAlimentacao"><option>Muita carne</option><option>Moderado</option><option>Vegetariano</option></select></label>
+        <label>Compras<select id="cConsumo"><option>Frequente</option><option>Moderado</option><option>Raramente</option></select></label>
+        <label>Resíduos<select id="cResiduos"><option>Sem reciclagem</option><option>Alguma reciclagem</option><option>Reciclagem ativa</option></select></label>
+        <div class="acoes"><button class="btn">Calcular e salvar</button></div>
+      </form>
+      <div id="resultado"></div>
+    </section>
+
+    <section id="historico" class="tab">
+      <h2>Histórico de cálculos</h2>
+      <label class="filtro">Filtrar por usuário<select id="hUsuario"></select></label>
+      <div class="tabela"><table>
+        <thead><tr><th>Data</th><th>Usuário</th><th>Total</th><th>Nível</th><th></th></tr></thead>
+        <tbody id="listaCalculos"></tbody>
+      </table></div>
+      <div id="detalhe"></div>
+    </section>
+  </main>
+
+  <div id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
