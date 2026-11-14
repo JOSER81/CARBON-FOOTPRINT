@@ -47,7 +47,7 @@ No IntelliJ: *Run → Edit Configurations → Main → Environment variables*.
 ### 3. Abrir e executar no IntelliJ
 1. `File → Open` → selecione esta pasta
 2. Clique em **Load Maven Project** (baixa o driver do PostgreSQL)
-3. Selecione **Main** no topo e clique em ▶ Run
+3. Selecione **Main** no topo e clique em  Run
 
 As tabelas são criadas automaticamente na primeira execução (`DatabaseInitializer`).
 Se preferir criar na mão, use `sql/schema.sql`.
