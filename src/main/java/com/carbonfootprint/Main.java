@@ -9,7 +9,7 @@ import com.carbonfootprint.ui.ConsoleUI;
  *
  * Fluxo de inicialização:
  *   1. Conecta ao banco PostgreSQL (DatabaseConnection — Singleton)
- *   2. Cria as tabelas se não existirem (DatabaseInitializer)
+ *   2. Crias as tabelas se não existirem (DatabaseInitializer)
  *   3. Exibe o menu interativo no console (ConsoleUI)
  *   4. Encerra a conexão ao sair
  */
